@@ -1,0 +1,466 @@
+<html>
+<head>
+    <base href="index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Henderson Place Foundation - Celebrating Our Legacy</title>
+    <meta name="description" content="8 Henderson Place Foundation: dedicated to protect, preserve and perpetuate its invaluable archives for cultural and educational purposes.">
+    <meta name="author" content="8 Henderson Place Foundation">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('gallery/slide1.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .nav-link {
+            color: #34495e;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #e74c3c;
+        }
+        .btn-hero {
+            background-color: #e74c3c;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-hero:hover {
+            background-color: #c0392b;
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .section-heading h3 {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        .service-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+        .service-box i {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #e74c3c;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .footer h4 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        .social-icons {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #ecf0f1;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #e74c3c;
+        }
+        .footer-bottom {
+            background-color: #1a252f;
+            color: #7f8c8d;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        .upcoming-events {
+            background-color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .event-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .event-date {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .featured-resource {
+            background-color: #3498db;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .featured-resource img {
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<!-- Event snippet for pageview conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16632146315/g5hBCPDTpM8ZEIvT6fo9',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">8 Henderson Place Foundation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="abouus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#featured">Featured Resource</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="header">
+        <h1 class="display-3 mb-4">8 Henderson Place Foundation</h1>
+        <h2 class="display-6 mb-5">Celebrating Our Legacy</h2>
+        <a href="#about" class="btn btn-hero btn-lg">Learn More</a>
+        <p class="mt-4 small">8 Henderson Place Foundation - EIN 51-0204040</p>
+    </header>
+
+    <main>
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>About 8 Henderson Place Foundation</h2>
+                    <h3>Our mission is to protect, preserve, and perpetuate our invaluable archives for cultural and educational purposes.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p>The 8 Henderson Place Foundation was established in 1978 with the goal of celebrating the legacy of our founders Gregory d'Alessio and Hilda Terry. We remain dedicated to protecting, preserving, and perpetuating its invaluable archives for cultural and educational purposes and to continue the founders' emphasis on cultivating the aging creative spirit.</p>
+                        <p>Our foundation offers a wide range of resources and support to individuals and families in our community. We believe that everyone deserves access to cultural and educational resources, encouragement, and a sense of belonging.</p>
+                        <p>As a foundation operating in New York, USA, we are dedicated to serving our community and spreading the message of cultural preservation. Our work is grounded in the legacy of our founders, and we believe in the power of community and compassion.</p>
+                        <p>One of our core programs focuses on providing support to aging creative individuals. We understand the challenges they face and aim to provide practical assistance, resources, and a supportive community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Services</h2>
+                    <h3>We're here to offer practical support and resources for your journey.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-book"></i>
+                            <h3>Resource Library</h3>
+                            <p>Browse our extensive collection of books, DVDs, and resources on cultural and educational topics.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Programs</h3>
+                            <p>Connect with others through workshops, and social gatherings.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-heart"></i>
+                            <h3>Family Support</h3>
+                            <p>Find mentorship, guidance, and practical assistance for families facing challenges.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Job Search Support</h3>
+                            <p>Get help with resume writing, interview skills, and career planning for individuals aged 25-65.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-pray"></i>
+                            <h3>Prayer Support</h3>
+                            <p>Join our prayer groups or submit prayer requests for personal support and spiritual growth.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Volunteer Opportunities</h3>
+                            <p>Contribute your time and talents to make a difference in our community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Story</h2>
+                    <h3>See the impact the 8 Henderson Place Foundation is having on our community.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/img1.jpg" alt="Two people browsing books at an outdoor market" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Community Book Fair</h4>
+                            <p>Sharing the joy of reading and discovering new perspectives.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/img8.jpg" alt="A bakery window display" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Bake Sale Fundraiser</h4>
+                            <p>Gathering for fellowship and supporting our mission.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/img3.jpg" alt="A bookstore exterior" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Our Welcoming Space</h4>
+                            <p>A place for cultural learning and community connection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>What People Are Saying</h2>
+                    <h3>Hear how the 8 Henderson Place Foundation has made a difference in the lives of others.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image (3).png" alt="Sarah M." class="img-fluid mx-auto d-block">
+                            <p>"After losing my husband, I felt so lost and alone. The 8 Henderson Place Foundation provided me with books that helped me process my grief and find comfort in my faith. The library's quiet space and welcoming atmosphere provided a much-needed sense of peace."</p>
+                            <p class="font-weight-bold">- Sarah M.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/téléchargement (3).jfif" alt="Mark T." class="img-fluid mx-auto d-block">
+                            <p>"I'm always looking for resources to help me raise my children with strong cultural values. The 8 Henderson Place Foundation has been a treasure trove for me! I've found parenting books that offer practical guidance, and I love the children's books they have for my kids."</p>
+                            <p class="font-weight-bold">- Mark T.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/téléchargement (4).jfif" alt="Emily K." class="img-fluid mx-auto d-block">
+                            <p>"I've always been curious about my faith, but I didn't know where to start. The 8 Henderson Place Foundation gave me the resources I needed to explore my faith in a comfortable and non-judgmental environment. The staff is so helpful and knowledgeable."</p>
+                            <p class="font-weight-bold">- Emily K.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="upcoming-events">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Upcoming Events</h2>
+                    <h3>Join us for these exciting community gatherings</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Bible Study Group</h4>
+                            <p class="event-date">Every Tuesday, 7:00 PM</p>
+                            <p>Join us for an in-depth study of the Book of Romans. All are welcome!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Family Movie Night</h4>
+                            <p class="event-date">October 15, 6:30 PM</p>
+                            <p>Bring the whole family for a screening of "The Lion, the Witch, and the Wardrobe".</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Job Search Workshop</h4>
+                            <p class="event-date">November 22, 10:00 AM - 2:00 PM</p>
+                            <p>Learn essential job search skills and network with local employers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="featured-resource">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Featured Resource</h2>
+                        <h3>"Navigating the Mysteries of Faith" by Pastor John Smith</h3>
+                        <p>This insightful book offers practical advice on maintaining a strong faith in today's fast-paced world. Pastor Smith draws on his years of experience to provide guidance on prayer, community involvement, and personal growth.</p>
+                        <a href="Contactus.html" class="btn btn-light">Reserve a Copy - Contact Us</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="gallery/1280x720.png" alt="Featured book cover" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>The 8 Henderson Place Foundation is dedicated to protecting, preserving, and perpetuating its invaluable archives for cultural and educational purposes since 1978.</p>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/channel/UCFodje4K3Wd7CcA0YeF41Gg"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/christianresource.library?igsh=MWU3Y2Y4ODRlcG5mYg=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="abouus.html">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="Contactus.html">Contact Us</a></li>
+                        <li><a href="donation.html">Donations</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <p>8 Henderson Place Foundation<br>
+                    8 Henderson Pl New York, NY 10028 USA</p>
+                    <p>Email: admin@8hendersonplacefoundation.org</p>
+                    <p>Phone: (212) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container text-center">
+            <p>&copy; 2024 8 Henderson Place Foundation. All rights reserved. EIN: 51-0204040</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
